@@ -84,8 +84,8 @@ def draw_text_with_shadow(background, draw, position, text, font, fill, shadow_o
 
 
 async def get_thumb(videoid):
-    if os.path.isfile(f"cache/{videoid}_v4.png"):
-        return f"cache/{videoid}_v4.png"
+    if os.path.isfile(f"cache/{videoid}.png"):
+        return f"cache/{videoid}.png"
 
     url = f"https://www.youtube.com/watch?v={videoid}"
     results = VideosSearch(url, limit=1)
@@ -170,7 +170,8 @@ async def get_thumb(videoid):
     #draw.text((1080, 400), duration, (255, 255, 255), font=arial)
     draw_text_with_shadow(background, draw, (text_x_position, 400), "00:00", arial, (255, 255, 255))
     draw_text_with_shadow(background, draw, (1080, 400), duration, arial, (255, 255, 255))
-
+    
+    print("Opening play_icons.png")
     play_icons = Image.open("AnonXMusic/assets/play_icons.png")
     play_icons = play_icons.resize((580, 62))
 
@@ -190,5 +191,5 @@ async def get_thumb(videoid):
         os.remove(f"cache/thumb{videoid}.png")
     except:
         pass
-    background.save(f"cache/{videoid}_v4.png")
-    return f"cache/{videoid}_v4.png"
+    background.save(f"cache/{videoid}.png")
+    return f"cache/{videoid}.png"
