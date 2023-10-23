@@ -171,9 +171,9 @@ async def get_thumb(videoid):
     draw_text_with_shadow(background, draw, (text_x_position, 400), "00:00", arial, (255, 255, 255))
     draw_text_with_shadow(background, draw, (1080, 400), duration, arial, (255, 255, 255))
     
-    print("Opening play_icons.png")
-    play_icons = Image.open("AnonXMusic/assets/play_icons.png")
-    play_icons = play_icons.resize((580, 62))
+    #print("Opening play_icons.png")
+    #play_icons = Image.open("AnonXMusic/assets/play_icons.png")
+    #play_icons = play_icons.resize((580, 62))
 
     #gradient = Image.new('L', (play_icons.width, play_icons.height), color=0xFF)
     #top = Image.new('L', (play_icons.width, 30), color=0xFF)
@@ -184,7 +184,7 @@ async def get_thumb(videoid):
     #shadowed_play_icons = Image.composite(play_icons, Image.new('RGBA', play_icons.size, (0, 0, 0, 0)), gradient)
 
     
-    background.paste(play_icons, (text_x_position, 450), play_icons)
+    #background.paste(play_icons, (text_x_position, 450), play_icons)
     #background.paste(shadowed_play_icons, (text_x_position, 450), shadowed_play_icons)
 
     try:
